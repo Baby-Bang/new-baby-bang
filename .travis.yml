@@ -6,3 +6,6 @@ services:
 before_script:
   - sleep 15
   - mongo mydb_test --eval 'db.addUser("customers", "hello");'
+
+  notifications:
+    webhooks: https://hook.bearychat.com/=bw70L/travis/328692692706da32c16816ceb09720a8
