@@ -1,4 +1,4 @@
-#new-baby-bang
+#new-baby-bang  [![Build Status](https://travis-ci.org/Baby-Bang/new-baby-bang.svg?branch=master)](https://travis-ci.org/Baby-Bang/new-baby-bang)
 
 #关注孩子成长，解决年轻父母照顾孩子的问题
 
@@ -15,4 +15,7 @@
 ```
 ```
 4. npm start
+```
+```
+open localhost:3000 in Browser
 ```
