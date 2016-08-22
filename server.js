@@ -5,7 +5,7 @@ const session = require('express-session');
 const app = new express();
 
 const hello = require('./server/routers/hello-world');
-
+const logIn=require('./server/routers/logIn');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
@@ -16,7 +16,7 @@ app.use(session({
 }));
 
 app.use('/', hello);
-
+app.use('/',logIn);
 var server = app.listen(3000, function () {
   console.log('listening at port %s', server.address().port);
 });
