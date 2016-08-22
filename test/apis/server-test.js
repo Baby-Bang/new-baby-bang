@@ -16,10 +16,10 @@ describe('server', () => {
     clear('hello');
   });
 
-  it('responds to /hello', function testSlash() {
+  it('responds to /hello', function testSlash(done) {
     request(server)
       .get('/hello')
-      .expect(200, '"world"');
+      .expect(200, '"world"', done);
 
   });
 
