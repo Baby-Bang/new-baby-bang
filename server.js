@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 const app = new express();
 
@@ -8,6 +9,11 @@ const hello = require('./server/routers/hello-world');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
+app.use(session({
+  secret: 'a',
+  resave: true,
+  saveUninitialized: true,
+}));
 
 app.use('/', hello);
 
