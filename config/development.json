@@ -1,7 +1,7 @@
 {
   "App": {
     "dbConfig": {
-      "dbName": "sunset"
+      "dbName": "BabyUser"
     }
   }
 }
