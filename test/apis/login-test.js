@@ -16,19 +16,22 @@ describe('login', () => {
 
   it('userName is wrong', (done) => {
     request(server)
-      .post('/sessions', {userName: 'sui', password: '123456'})
-      .expect(400, '', done);
+      .post('/sessions')
+      .send({userName: 'sui', password: '123456'})
+      .expect(400, done);
   });
 
   it('password is worng', (done) => {
     request(server)
-      .post('/sessions', {userName: 'suibian', password: '123'})
-      .expect(400, '', done);
+      .post('/sessions')
+      .send({userName: 'suibian', password: '123'})
+      .expect(400, done);
   });
 
   it('userInfo is right', (done) => {
     request(server)
-      .post('/sessions', {userName: 'suibian', password: '123456'})
-      .expect(200, '', done);
+      .post('/sessions')
+      .send({userName: 'suibian', password: '123456'})
+      .expect(200, done);
   });
 });
