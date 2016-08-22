@@ -8,7 +8,7 @@ describe('server', () => {
 
   beforeEach(function () {
 
-    insert('hello', {hello: "World"});
+    insert('hello', {hello: "world"});
     server = require('../../server');
   });
 
