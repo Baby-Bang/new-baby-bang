@@ -1,26 +1,19 @@
 const request = require('supertest');
 const url = require('../../server/helpers/get-url');
-const mongoClient = require('../../server/helpers/mongodb');
+const clear = require('../../server/helpers/clear');
+const insert = require('../../server/helpers/insert');
 
 describe('server', () => {
   let server;
 
   beforeEach(function () {
-    mongoClient.connect(url, (err, db)=> {
-      const collection = db.collection('hello');
-      collection.insert([{hello: "world"}], (err, result)=> {
-      });
-      db.close();
-    });
+
+    insert('hello', {hello: "World"});
     server = require('../../server');
   });
 
   afterEach(function () {
-    mongoClient.connect(url, (err, db)=> {
-      const collection = db.collection('hello');
-      collection.removeMany({});
-      db.close();
-    })
+    clear('hello');
   });
 
   it('responds to /hello', function testSlash() {
