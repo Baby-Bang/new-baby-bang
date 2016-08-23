@@ -5,10 +5,13 @@ import {Provider} from "react-redux";
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from "./containers/App";
 import Hello from './containers/Hello';
-import reducer from "./reducers/reducer";
+import reducer from "./reducers/index";
 import getValue from "./middlewares/get-value";
+import login from "./middlewares/login";
+import Login from './containers/login';
+import LoginRegister from  './containers/login-register';
 
-const createStoreWithMiddleware = applyMiddleware(getValue)(createStore);
+const createStoreWithMiddleware = applyMiddleware(getValue, login)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -17,6 +20,9 @@ render(
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Hello}/>
+      </Route>
+      <Route path="/login" component={LoginRegister}>
+        <IndexRoute component={Login}/>
       </Route>
     </Router>
   </Provider>, document.getElementById('app'));
