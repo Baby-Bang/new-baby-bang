@@ -6,7 +6,7 @@ module.exports = (collect, data, callback) => {
     mongoClient.connect(url, (err, db)=> {
       const collection = db.collection(collect);
       collection.insertOne(data, (err, result)=> {
-        let httpCode = 200;
+        let httpCode = 201;
         if(err) {
           httpCode = 400;
           callback(httpCode)

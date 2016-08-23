@@ -14,10 +14,10 @@ describe('sign', () => {
     });
 
 
-    it('insertUser is right', (done) => {
+    it('return insert user is right', (done) => {
         request(server)
             .post('/session')
             .send({userName: '123', password: '123',babyBir:'2016-05-14',sex:'male',diaries:[]})
-            .expect(200, done);
+            .expect(201, done);
     });
 });
