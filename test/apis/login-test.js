@@ -5,9 +5,12 @@ const insert = require('../../server/helpers/insert');
 describe('Login', () => {
   let server;
 
-  beforeEach(() => {
-    insert('userInfo', {userName: 'suibian', password: '123456'});
+  beforeEach((done) => {
     server = require('../../server');
+    insert('userInfo', {userName: 'suibian', password: '123456'},(err) => {
+      "use strict";
+      done();
+    });
   });
 
   afterEach((done) => {
