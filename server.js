@@ -5,6 +5,7 @@ const session = require('express-session');
 
 const app = new express();
 
+const sessions = require('./server/routers/session');
 
 const isUserExist = require('./server/routers/isUserExist');
 
@@ -13,6 +14,7 @@ const login = require('./server/routers/login');
 const showDiaries = require('./server/routers/show-diaries');
 
 const sign = require('./server/routers/sign');
+
 
 
 app.use(bodyParser.json());
@@ -24,7 +26,7 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-
+app.use('/',sessions);
 app.use('/',isUserExist);
 
 app.use('/', login);

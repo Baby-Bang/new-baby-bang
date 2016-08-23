@@ -10,8 +10,9 @@ describe('Login', () => {
     server = require('../../server');
   });
 
-  afterEach(() => {
+  afterEach((done) => {
     clear('userInfo');
+    done();
   });
 
   it('returns 403 when user name is wrong', (done) => {
