@@ -7,9 +7,9 @@ const router = express.Router();
 router.post('/sessions',(req,res)=>{
   findUser(req.body,(result)=>{
     if(result){
-      res.status(200).end();
+      res.json(200);
     }else{
-      res.status(400).end();
+      res.json(400);
     }
   })
 });

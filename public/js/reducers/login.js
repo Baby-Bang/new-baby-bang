@@ -1,4 +1,4 @@
-module.exports = (state, action) => {
+module.exports = (state = {httpCode: ''}, action) => {
   switch (action.type) {
     case "LOGIN":
       return {
