@@ -9,6 +9,7 @@ import reducer from "./reducers/index";
 import getValue from "./middlewares/get-value";
 import login from "./middlewares/login";
 import Login from './containers/login';
+import LoginRegister from  './containers/login-register';
 
 const createStoreWithMiddleware = applyMiddleware(getValue, login)(createStore);
 
@@ -20,6 +21,8 @@ render(
       <Route path="/" component={App}>
         <IndexRoute component={Hello}/>
       </Route>
-      <Route path="/login" component={Login}/>
+      <Route path="/login" component={LoginRegister}>
+        <IndexRoute component={Login}/>
+      </Route>
     </Router>
   </Provider>, document.getElementById('app'));
