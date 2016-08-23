@@ -10,8 +10,9 @@ describe('user exist', ()=> {
         server = require('../../server');
     });
 
-    afterEach(() => {
+    afterEach((done) => {
         clear('userInfo');
+        done();
     });
 
     it('return true when user name is Exist', (done) => {
