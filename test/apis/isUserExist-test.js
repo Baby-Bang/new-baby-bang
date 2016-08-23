@@ -2,7 +2,7 @@ const request = require('supertest');
 const clear = require('../../server/helpers/clear');
 const insert = require('../../server/helpers/insert');
 
-describe('isUserExist', ()=> {
+describe('user exist', ()=> {
     let server;
 
     beforeEach(() => {
@@ -14,17 +14,17 @@ describe('isUserExist', ()=> {
         clear('userInfo');
     });
 
-    it('userName is Exist', (done) => {
+    it('return true when user name is Exist', (done) => {
         request(server)
             .get('/isUserExist')
-            .send({userName: '123', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []})
+            .send({userName: '123'})
             .expect(200, 'true', done);
     });
 
-    it('userName is not Exist', (done)=> {
+    it('return when user name is not Exist', (done)=> {
         request(server)
             .get('/isUserExist')
-            .send({userName: '900', password: '13', babyBir: '2016-05-14', sex: 'male', diaries: []})
+            .send({userName: '900'})
             .expect(200, 'false', done);
 
     });
