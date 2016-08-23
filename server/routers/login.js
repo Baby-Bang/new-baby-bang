@@ -6,10 +6,12 @@ const router = express.Router();
 
 router.post('/sessions',(req,res)=>{
   findUser(req.body,(result)=>{
-    if(result){
+    if(result.length != 0){
+      req.session.name = result[0].userName;
+      req.session.userInfo = result[0].userInfo;
       res.status(200).end();
     }else{
-      res.status(400).end();
+      res.status(403).end();
     }
   })
 });

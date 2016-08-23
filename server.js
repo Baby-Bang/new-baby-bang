@@ -4,9 +4,17 @@ const session = require('express-session');
 
 const app = new express();
 
-const hello = require('./server/routers/hello-world');
-const logIn=require('./server/routers/logIn');
 const sessions = require('./server/routers/session');
+
+const isUserExist = require('./server/routers/isUserExist');
+
+const login = require('./server/routers/login');
+
+const showDiaries = require('./server/routers/show-diaries');
+
+const sign = require('./server/routers/sign');
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,9 +25,14 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use('/', hello);
-app.use('/',logIn);
 app.use('/',sessions);
+app.use('/',isUserExist);
+
+app.use('/', login);
+
+app.use('/', showDiaries);
+
+app.use('/', sign);
 
 var server = app.listen(3000, function () {
   console.log('listening at port %s', server.address().port);
