@@ -4,11 +4,11 @@ const session = require('express-session');
 
 const app = new express();
 
-const logIn=require('./server/routers/logIn');
+const login = require('./server/routers/login');
 
 const showDiaries = require('./server/routers/show-diaries');
 
-const sign=require('./server/routers/sign');
+const sign = require('./server/routers/sign');
 
 
 app.use(bodyParser.json());
@@ -20,11 +20,11 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use('/',logIn);
+app.use('/', login);
 
-app.use('/',showDiaries);
+app.use('/', showDiaries);
 
-app.use('/',sign);
+app.use('/', sign);
 
 var server = app.listen(3000, function () {
   console.log('listening at port %s', server.address().port);
