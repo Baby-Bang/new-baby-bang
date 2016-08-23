@@ -5,8 +5,10 @@ const insert = require('../../server/helpers/insert');
 describe('user exist', ()=> {
     let server;
 
-    beforeEach(() => {
-        insert('userInfo', {userName: '123', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []});
+    beforeEach((done) => {
+        insert('userInfo', {userName: '123', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []},(err) => {
+          done();
+        });
         server = require('../../server');
     });
 
