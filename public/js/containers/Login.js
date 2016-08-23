@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import login from '../components/login';
+import Login from '../components/Login';
 import action from '../actions/login';
 
 const mapStateToProps = (state) => {
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

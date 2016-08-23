@@ -21,14 +21,14 @@ describe('Login', () => {
       .expect(403, done);
   });
 
-  it('returns 403 when login password is worng', (done) => {
+  it('returns 403 when Login password is worng', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123'})
       .expect(403, done);
   });
 
-  it('returns 200 when login successfully', (done) => {
+  it('returns 200 when Login successfully', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123456'})
