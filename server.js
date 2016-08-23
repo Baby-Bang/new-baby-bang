@@ -15,6 +15,8 @@ const showDiaries = require('./server/routers/show-diaries');
 
 const sign = require('./server/routers/sign');
 
+const editorDiary = require('./server/routers/editor-diary');
+
 
 
 app.use(bodyParser.json());
@@ -28,12 +30,11 @@ app.use(session({
 
 app.use('/',sessions);
 app.use('/',isUserExist);
-
 app.use('/', login);
-
 app.use('/', showDiaries);
-
 app.use('/', sign);
+app.use('/', editorDiary);
+
 app.get('*', (req, res) => {
   "use strict";
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
