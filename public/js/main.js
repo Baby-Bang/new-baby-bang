@@ -6,7 +6,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from "./containers/App";
 import reducer from "./reducers/reducer";
 import getValue from "./middlewares/get-value";
-import Home from "./containers/Home"
+import Home from "./containers/Home";
 
 const createStoreWithMiddleware = applyMiddleware(getValue)(createStore);
 
