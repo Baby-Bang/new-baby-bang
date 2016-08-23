@@ -2,7 +2,7 @@ const request = require('supertest');
 const clear = require('../../server/helpers/clear');
 const insert = require('../../server/helpers/insert');
 
-describe('login', () => {
+describe('Login', () => {
   let server;
 
   beforeEach(() => {
@@ -14,24 +14,24 @@ describe('login', () => {
     clear('userInfo');
   });
 
-  it('userName is wrong', (done) => {
+  it('returns 403 when user name is wrong', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'sui', password: '123456'})
-      .expect(200, '400', done);
+      .expect(403, done);
   });
 
-  it('password is worng', (done) => {
+  it('returns 403 when login password is worng', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123'})
-      .expect(200, '400', done);
+      .expect(203, done);
   });
 
-  it('userInfo is right', (done) => {
+  it('returns 200 when login successfully', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123456'})
-      .expect(200, '200', done);
+      .expect(200, done);
   });
 });
