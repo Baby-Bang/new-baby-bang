@@ -19,11 +19,11 @@ export default class Login extends React.Component {
     } else if (this.props.httpCode === 200) {
       browserHistory.push('/');
     }
-    return <div>
+    return <div className="col-lg-10 col-lg-offset-1">
       <input type="text" className="text form-control loginInput center" ref="userName" placeholder="用户名"/>
       <input type="text" className="text form-control loginInput center" ref="password" placeholder="密码"/>
-      <div className="col-md-6 col-md-offset-1 errorColor" id="error">{error}</div>
-      <button type="button" className="btn btn-default logbtn" onClick={this.submitUserInfo.bind(this)}>sumbit</button>
+      <div className="errorColor" id="error">{error}</div>
+      <button type="button" className="btn btn-block logbtn" onClick={this.submitUserInfo.bind(this)}>sumbit</button>
     </div>
   }
 }
