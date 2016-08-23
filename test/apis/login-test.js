@@ -25,7 +25,7 @@ describe('Login', () => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123'})
-      .expect(203, done);
+      .expect(403, done);
   });
 
   it('returns 200 when login successfully', (done) => {
