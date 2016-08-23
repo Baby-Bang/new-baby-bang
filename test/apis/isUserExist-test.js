@@ -24,7 +24,7 @@ describe('isUserExist', ()=> {
     it('userName is not Exist', (done)=> {
         request(server)
             .get('/isUserExist')
-            .send({userName: '1', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []})
+            .send({userName: '900', password: '13', babyBir: '2016-05-14', sex: 'male', diaries: []})
             .expect(200, 'false', done);
 
     });
