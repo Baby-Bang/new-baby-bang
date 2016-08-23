@@ -9,10 +9,9 @@ router.post('/sessions',(req,res)=>{
     if(result.length != 0){
       req.session.name = result[0].userName;
       req.session.userInfo = result[0].userInfo;
-      res.json(200);
+      res.status(200).end();
     }else{
       res.status(403).end();
-      // res.json(400);
     }
   })
 });
