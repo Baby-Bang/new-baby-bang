@@ -9,8 +9,9 @@ describe('sign', () => {
         server = require('../../server');
     });
 
-    afterEach(() => {
+    afterEach((done) => {
         clear('userInfo');
+        done();
     });
 
 

@@ -5,13 +5,17 @@ const insert = require('../../server/helpers/insert');
 describe('Login', () => {
   let server;
 
-  beforeEach(() => {
-    insert('userInfo', {userName: 'suibian', password: '123456'});
+  beforeEach((done) => {
     server = require('../../server');
+    insert('userInfo', {userName: 'suibian', password: '123456'},(err) => {
+      "use strict";
+      done();
+    });
   });
 
-  afterEach(() => {
+  afterEach((done) => {
     clear('userInfo');
+    done();
   });
 
   it('returns 403 when user name is wrong', (done) => {
@@ -21,14 +25,14 @@ describe('Login', () => {
       .expect(403, done);
   });
 
-  it('returns 403 when login password is worng', (done) => {
+  it('returns 403 when Login password is worng', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123'})
       .expect(403, done);
   });
 
-  it('returns 200 when login successfully', (done) => {
+  it('returns 200 when Login successfully', (done) => {
     request(server)
       .post('/sessions')
       .send({userName: 'suibian', password: '123456'})
