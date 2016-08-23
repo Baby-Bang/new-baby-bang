@@ -11,7 +11,8 @@ router.post('/sessions',(req,res)=>{
       req.session.userInfo = result[0].userInfo;
       res.json(200);
     }else{
-      res.json(400);
+      res.status(403).end();
+      // res.json(400);
     }
   })
 });
