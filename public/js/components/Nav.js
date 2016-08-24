@@ -10,6 +10,10 @@ class Nav extends Component {
     this.props.onGetUserName();
   }
 
+  changeActive(text) {
+    this.props.onChangeActive(text);
+  }
+
   render() {
     return <div>
       <div className="navTop">
@@ -20,29 +24,31 @@ class Nav extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navList">
-                <li className="active navLi"><a href="#">首页</a></li>
+                <li className={this.props.isActive === 'home' ? "active navLi" : "navLi"}>
+                  <Link to="/"><span onClick={this.changeActive.bind(this, 'home')}>首页</span></Link>
+                </li>
                 <li>
                   <div className="dropdown">
-                    <button className="dropbtn navLi">成长日记</button>
+                    <button className={this.props.isActive === 'growth' ? "dropbtn navLi active" : "dropbtn navLi"}>成长日记</button>
                     <div className="dropdown-content">
-                      <Link to="/diaries">查看日记</Link>
-                      <Link to="/diary">添加日记</Link>
+                      <Link to="/diaries"><span onClick={this.changeActive.bind(this, 'growth')}>查看日记</span></Link>
+                      <Link to="/diary"><span onClick={this.changeActive.bind(this, 'growth')}>添加日记</span></Link>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="dropdown">
-                    <button className="dropbtn navLi">小圈子</button>
+                    <button className={this.props.isActive === 'circle' ? "dropbtn navLi active" : "dropbtn navLi"}>小圈子</button>
                     <div className="dropdown-content">
-                      <Link to="/dadyCenter">爸爸圈</Link>
-                      <Link to="/momCenter">妈妈圈</Link>
+                      <Link to="/dadyCenter"><span onClick={this.changeActive.bind(this, 'circle')}>爸爸圈</span></Link>
+                      <Link to="/momCenter"><span onClick={this.changeActive.bind(this, 'circle')}>妈妈圈</span></Link>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="navbtn navA">
                     <button className="dropbtn" onClick={this.more}>
-                      <a className=""  href="#">更多</a>
+                      <a className="" href="#">更多</a>
                     </button>
                   </div>
                 </li>

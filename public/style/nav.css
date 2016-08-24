@@ -18,7 +18,7 @@
   width: 100%;
 }
 .active{
-  margin-top:4px;
+  background:#000;
 }
 .dropdown-content a {
   color: black;
@@ -64,7 +64,6 @@
 }
 .navList{
   height:55px;
-
 }
 #login_res{
   margin-top:20px;
