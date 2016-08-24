@@ -6,6 +6,6 @@ const expect = require('chai').expect;
 describe('Login reducer', ()=> {
   it('changes httpCode', ()=> {
     const state = {userName: ''};
-    expect(reducer(state, actions.getUserName('test'))).to.equal('test');
+    expect(reducer(state, actions.getUserName('test')).userName).to.equal('test');
   });
 });

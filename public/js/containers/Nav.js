@@ -3,7 +3,6 @@ import Nav from '../components/Nav';
 import action from '../actions/nav';
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     userName:state.nav.userName
   };

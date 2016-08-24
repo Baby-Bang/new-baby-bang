@@ -1,15 +1,29 @@
-const request = require('supertest');
+const request = require('supertest-session');
+const insert = require('../../server/helpers/insert');
+const clear = require('../../server/helpers/clear');
+const server = require('../../server');
 
 describe('sessions', () => {
-  let server;
+  let testSession = null;
 
-  beforeEach(()=>{
-    server = require('../../server');
+  beforeEach((done)=> {
+    insert('userInfo', {userName: 'suibian', password: '123456'}, () => {
+      done();
+    });
+    testSession = request(server);
+  });
+
+  afterEach((done) => {
+    clear('userInfo');
+    done();
   });
 
   it('return user logIn', (done) => {
-    request(server)
-      .get('/sessions/user')
-      .expect(200,'"zxw"',done)
+    testSession.post('/sessions')
+      .send({userName: 'suibian', password: '123456'})
+      .end(() => {
+        testSession.get('/sessions/user')
+          .expect(200, '"suibian"', done);
+      });
   });
 });
