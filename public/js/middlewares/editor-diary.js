@@ -1,4 +1,5 @@
 import request from 'superagent';
+import {browserHistory} from 'react-router';
 import actions from '../actions/add-diary';
 
 export default store => next => action => {
@@ -8,6 +9,21 @@ export default store => next => action => {
         next(actions.getBirthday(res.body));
       });
   } else {
+    next(action);
+  }
+
+  if(action.type==='ADD_DIARY'){
+    request.post('/diary')
+      .send(action.data)
+      .end((err,res)=>{
+         if(res.statusCode===201){
+           browserHistory.push('/');
+         }else{
+           next(actions.afterAddDiary(res.statusCode));
+         }
+
+    })
+  }else{
     next(action);
   }
 }
