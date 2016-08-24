@@ -6,9 +6,7 @@ describe('user exist', ()=> {
     let server;
 
     beforeEach((done) => {
-        insert('userInfo', {userName: '123', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []},(err) => {
-          done();
-        });
+        insert('userInfo', {userName: '123', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []},done);
         server = require('../../server');
     });
 
@@ -21,7 +19,7 @@ describe('user exist', ()=> {
         request(server)
             .get('/isUserExist')
             .send({userName: '123'})
-            .expect(200, 'true', done);
+            .expect(200, 'true').end(done);
     });
 
     it('return when user name is not Exist', (done)=> {
