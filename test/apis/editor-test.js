@@ -8,9 +8,7 @@ describe('Editor',()=> {
 
   let server;
   beforeEach((done)=> {
-    insert('userInfo', {userName: '123', password: '123', diaries: []},(err,result) => {
-      done();
-    });
+    insert('userInfo', {userName: '123', password: '123', diaries: []},done);
 
     server = require('../../server');
   });
