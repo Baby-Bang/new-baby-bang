@@ -1,7 +1,14 @@
-const addDiary = (httpCode)=> {
+const afterAddDiary = (httpCode)=> {
   return {
-    type: 'ADD_DIARY',
+    type: 'AFTER_ADD_DIARY',
     httpCode
+  }
+};
+
+const addDiary=(data)=>{
+  return{
+    type:'ADD_DIARY',
+    data
   }
 };
 
@@ -14,5 +21,6 @@ const getBirthday = (babyBir) => {
 
 module.exports = {
   addDiary,
+  afterAddDiary,
   getBirthday
 };

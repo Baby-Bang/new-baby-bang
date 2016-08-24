@@ -24,4 +24,5 @@ router.get('/babyBir', (req, res) => {
   res.json(req.session.userInfo.babyBir);
 });
 
+
 module.exports = router;

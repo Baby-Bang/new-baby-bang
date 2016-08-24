@@ -26,7 +26,6 @@ const getAge = (babyBir) => {
     today: `${dates[0]}-${dates[2]}-${dates[1]}`
   };
 };
-
 const mapStateToProps = (state) => {
   const babyBir = state.editorDiary.babyBir;
   return getAge(babyBir);
@@ -36,6 +35,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onGet: () => {
       dispatch(actions.getBirthday(''));
+    },
+    onAdd:(data)=>{
+      dispatch(actions.addDiary(data));
     }
   };
 };

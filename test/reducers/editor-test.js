@@ -8,8 +8,8 @@ describe('Editor diary', () => {
    state = {httpCode: '', babyBir: ''};
   });
   it('changes httpCode', () => {
-    expect(reducer(state, actions.addDiary(201)).httpCode).to.equal(201);
-    expect(reducer(state, actions.addDiary(400)).httpCode).to.equal(400);
+    expect(reducer(state, actions.afterAddDiary(201)).httpCode).to.equal(201);
+    expect(reducer(state, actions.afterAddDiary(400)).httpCode).to.equal(400);
   })
 
   it('get baby birthday', () => {
