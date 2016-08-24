@@ -54,7 +54,6 @@ class Nav extends Component {
 
 class NavLogReg extends Component{
   render(){
-    console.log(this.props.userName);
     return <div>
       <div className={this.props.userName===''? '':'hidden'}>
         <Link to="/login">登录</Link> |
