@@ -1,8 +1,8 @@
-module.exports = (state = {httpCode: ''}, action) => {
+module.exports = (state = {loginState: ''}, action) => {
   switch (action.type) {
     case "LOGIN":
       return {
-        httpCode: action.httpCode
+        loginState: action.loginState
       };
     default:
       return state;

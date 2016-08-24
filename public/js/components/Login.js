@@ -1,4 +1,5 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 export default class Login extends React.Component {
   submitUserInfo() {
@@ -11,9 +12,15 @@ export default class Login extends React.Component {
     }
   }
 
+  componentWillUpdate(nextProps) {
+    if(nextProps.loginState === 200){
+      browserHistory.push('/');
+    }
+  }
+
   render() {
     let error = '';
-    if (this.props.httpCode === 403) {
+    if (this.props.loginState === 403) {
       error = '用户或密码错误！';
     }
     return <div className="col-lg-10 col-lg-offset-1">

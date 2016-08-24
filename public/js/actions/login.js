@@ -1,12 +1,20 @@
 "use strict";
-const login = (httpCode)=> {
+const login = (loginState)=> {
   return {
     type: 'LOGIN',
-    httpCode
+    loginState
   };
 
 };
 
+const sendData = (data)=> {
+  return {
+    type: 'SEND_DATA',
+    data
+  }
+};
+
 module.exports = {
-  login
+  login,
+  sendData
 };
