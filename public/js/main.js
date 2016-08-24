@@ -8,10 +8,11 @@ import Home from "./containers/Home";
 import reducer from "./reducers/index";
 import getValue from "./middlewares/get-value";
 import login from "./middlewares/login";
+import nav from "./middlewares/nav";
 import Login from './containers/Login';
 import LoginRegister from  './containers/Login-register';
 
-const createStoreWithMiddleware = applyMiddleware(getValue, login)(createStore);
+const createStoreWithMiddleware = applyMiddleware(getValue, login,nav)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

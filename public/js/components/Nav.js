@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 class Nav extends Component {
   more() {
     alert('敬请期待');
+  }
+  componentDidMount(){
+    this.props.onGetUserName();
   }
   render() {
     return <div>
@@ -38,13 +42,28 @@ class Nav extends Component {
                 </button>
               </div>
               <div id="log">
-                <a href="#">登录</a> |
-                <a href="#"> 注册</a>
+                  <NavLogReg userName={this.props.userName}/>
               </div>
             </ul>
           </div>
         </div>
       </nav>
+    </div>
+  }
+}
+
+class NavLogReg extends Component{
+  render(){
+    console.log(this.props.userName);
+    return <div>
+      <div className={this.props.userName===''? '':'hidden'}>
+        <Link to="/login">登录</Link> |
+        <Link to="#"> 注册</Link>
+      </div>
+      <div className={this.props.userName===''?'hidden':''}>
+        <Link to="#">{this.props.userName}</Link> |
+        <Link to="#">登出</Link>
+      </div>
     </div>
   }
 }
