@@ -6,11 +6,11 @@ describe('Login', () => {
   let server;
 
   beforeEach((done) => {
-    server = require('../../server');
     insert('userInfo', {userName: 'suibian', password: '123456'},(err) => {
       "use strict";
       done();
     });
+    server = require('../../server');
   });
 
   afterEach((done) => {

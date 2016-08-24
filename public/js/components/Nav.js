@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 class Nav extends Component {
   more() {
@@ -38,7 +39,7 @@ class Nav extends Component {
                 </button>
               </div>
               <div id="log">
-                <a href="#">登录</a> |
+                <Link to='/login'>登录</Link> |
                 <a href="#"> 注册</a>
               </div>
             </ul>

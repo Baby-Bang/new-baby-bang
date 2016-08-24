@@ -44,7 +44,7 @@
 .logbtn{
   height:40px;
   background:#ff6382;
-  margin:60px 0px 0px 0px;
+  margin-top:60px;
 }
 .errorColor{
   color:red;

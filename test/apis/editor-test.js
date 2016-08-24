@@ -1,11 +1,17 @@
 "use strict";
 const request = require('supertest');
 const clear = require('../../server/helpers/clear');
+const insert = require('../../server/helpers/insert');
+
 
 describe('Editor',()=> {
 
   let server;
-  beforeEach(()=> {
+  beforeEach((done)=> {
+    insert('userInfo', {userName: '123', password: '123', diaries: []},(err,result) => {
+      done();
+    });
+
     server = require('../../server');
   });
 
@@ -29,4 +35,10 @@ describe('Editor',()=> {
       })
     .expect(201, done);
   });
+  it('return baby birthday',(done)=>{
+    request(server)
+      .get('/babyBir')
+      .expect(200,'"2016-01-02"',done);
+  })
+
 });
