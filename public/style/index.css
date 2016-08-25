@@ -111,11 +111,18 @@
 }
 
 .diaryContent {
-  border: 2px solid #000000;
+  border: 2px solid #fff;
+  width:100%;
   height: 550px;
-  background: rgba(0, 0, 0, 0.1);
+  /*background-image: url("../images/diaryContentBG.jpg");*/
 }
-
+.editorShow{
+  width:100%;
+  height:auto;
+  padding:0px !important;
+  filter:alpha(opacity=60);
+  opacity:0.6;
+}
 .loginBody {
   padding-top: 100px;
   background-color: #fee1e3;
