@@ -5,7 +5,7 @@ module.exports = (collect, searchData, addData, callback) => {
   if (callback) {
     mongoClient.connect(url, (err, db)=> {
       const collection = db.collection(collect);
-      collection.update(searchData, addData, (err, result)=> {
+      collection.update(searchData, addData, (err)=> {
         callback(err);
       });
       db.close();
@@ -13,7 +13,7 @@ module.exports = (collect, searchData, addData, callback) => {
   } else {
     mongoClient.connect(url, (err, db)=> {
       const collection = db.collection(collect);
-      collection.update(searchData, addDate);
+      collection.update(searchData, addData);
       db.close();
     });
   }

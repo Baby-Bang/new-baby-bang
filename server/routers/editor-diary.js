@@ -11,10 +11,10 @@ router.post('/diary', (req, res) => {
   putDiary(searchData, addData, (err) => {
     let httpCode = 201;
     if(err) {
-      httpCode = 400
+      httpCode = 400;
     }
     res.status(httpCode).end();
-  })
+  });
 });
 
 router.get('/babyBir', (req, res) => {
