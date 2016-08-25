@@ -17,7 +17,7 @@ export default store => next => action => {
       .send(action.data)
       .end((err,res)=>{
          if(res.statusCode===201){
-           browserHistory.push('/');
+           alert('保存成功');
          }else{
            next(actions.afterAddDiary(res.statusCode));
          }

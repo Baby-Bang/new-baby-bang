@@ -12,15 +12,6 @@ export default class EditorDiary extends React.Component {
     const babyScore = this.refs.babyScore.value;
     const parentScore = this.refs.parentScore.value;
     const publicDiary = $("input[name=public]:checked").val();
-    console.log({
-      date: this.props.today,
-      babyDays: this.props.age,
-      title,
-      content,
-      babyScore,
-      parentScore,
-      publicDiary
-    });
     this.props.onAdd({
       date: this.props.today,
       babyDays: this.props.age,
