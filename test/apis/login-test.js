@@ -6,7 +6,7 @@ describe('Login', () => {
   let server;
 
   beforeEach((done) => {
-    insert('userInfo', {userName: 'correct_name', password: 'correct_password'}, (err) => {
+    insert('userInfo', {userName: 'correct_name', password: 'correct_password'}, () => {
       "use strict";
       done();
     });

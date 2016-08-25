@@ -13,7 +13,21 @@ const changeActive = (text) => {
   };
 };
 
+const logOut = ()=> {
+  return {
+    type: 'LOG_OUT',
+  }
+};
+
+const clear = () => {
+  return {
+    type: 'CLEAR'
+  };
+};
+
 module.exports = {
   getUserName,
-  changeActive
+  changeActive,
+  logOut,
+  clear
 };

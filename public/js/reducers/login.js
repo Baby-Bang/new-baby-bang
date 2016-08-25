@@ -4,6 +4,10 @@ module.exports = (state = {loginState: ''}, action) => {
       return {
         loginState: action.loginState
       };
+    case 'CLEAR':
+      return {
+        loginState: ''
+      };
     default:
       return state;
   }

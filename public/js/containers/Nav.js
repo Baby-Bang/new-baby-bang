@@ -15,8 +15,13 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(action.getUserName(''));
     },
     onChangeActive: (text) => {
-      "use strict";
       dispatch(action.changeActive(text));
+    },
+    onLogOut:()=>{
+      dispatch(action.logOut());
+    },
+    changeLoginState: () => {
+      dispatch(action.clear());
     }
   };
 };
