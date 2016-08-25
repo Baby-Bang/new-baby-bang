@@ -37,7 +37,7 @@ app.use('/', editorDiary);
 
 app.get('*', (req, res) => {
   "use strict";
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 var server = app.listen(3000, function () {

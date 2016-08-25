@@ -11,4 +11,9 @@ router.get('/sessions/user',(req,res)=>{
   }
 });
 
+router.post('/sessions/user',(req,res)=>{
+  req.session.userName = req.body.userName;
+  res.json(req.session.userName);
+});
+
 module.exports=router;
