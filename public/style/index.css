@@ -52,6 +52,7 @@
   width:75%;
   height:200px;
   margin-left:40px;
+  border:1px solid rgba(0,0,0,0.3);
 }
 .score{
   display:inline-block;
@@ -77,6 +78,9 @@
   width:80%;
   margin-top:30px;
 }
+.editorBackground{
+ padding:0px !important;
+}
 .container{
   width:750px;
 }
@@ -88,13 +92,14 @@
   font-size:16px;
 }
 .diaryContent{
-  border:1px solid #000000;
+  border:2px solid #000000;
   height:550px;
+  background: rgba(0,0,0,0.1);
 }
 .loginBody{
   padding-top:100px;
   background-color:#fee1e3;
-  padding-bottom:80px;
+  padding-bottom:120px;
 }
 
 .logbtn{
@@ -106,5 +111,6 @@
   color:red;
 }
 .diaryNav{
-  margin-bottom:80px;
+  margin-bottom:-50px;
+
 }

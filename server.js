@@ -40,7 +40,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(3000,()=>{
   console.log('listening at port %s', server.address().port);
 });
 
