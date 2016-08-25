@@ -1,16 +1,16 @@
 "use strict";
-const request = require('supertest');
+const request = require('supertest-session');
 const clear = require('../../server/helpers/clear');
 const insert = require('../../server/helpers/insert');
-
+const server = require('../../server');
 
 describe('Editor',()=> {
 
-  let server;
+  let testSession = null;
   beforeEach((done)=> {
-    insert('userInfo', {userName: '123', password: '123', diaries: []},done);
+    insert('userInfo', {userName: '123', password: '123',babyBir: '2016-03-01', diaries: []},done);
 
-    server = require('../../server');
+    testSession = request(server);
   });
 
   afterEach((done)=> {
@@ -19,8 +19,7 @@ describe('Editor',()=> {
   });
 
   it('return 201 when diary is stored', (done)=> {
-    request(server)
-      .post('/diary')
+    testSession.post('/diary')
       .send({
         date: '2016-3-21',
         babyDays: '23天',
@@ -34,9 +33,12 @@ describe('Editor',()=> {
     .expect(201, done);
   });
   it('return baby birthday',(done)=>{
-    request(server)
-      .get('/babyBir')
-      .expect(200,'"2016-01-02"',done);
+    testSession.post('/sessions')
+      .send({userName: '123', password: '123'})
+      .end(() => {
+        testSession.get('/babyBir')
+          .expect(200, '"2016-03-01"', done);
+      });
   });
 
 });

@@ -1,0 +1,4 @@
+**/dist/**
+**.md
+webpack.config.js
+server.js

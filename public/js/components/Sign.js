@@ -12,7 +12,7 @@ export default class Sign extends React.Component {
     if (userName === '' || password === '' || confirmpwd === '' || babyBir === '' || sex === undefined) {
       alert('信息填写不完整');
     } else {
-      this.props.insertMessage({userName, password, babyBir, sex})
+      this.props.insertMessage({userName, password, babyBir, sex});
       alert('注册成功!');
       browserHistory.push('/login');
     }
@@ -48,7 +48,6 @@ export default class Sign extends React.Component {
   }
 
   render() {
-    console.log(this.props.isDisabled);
     let error = '';
     if (this.props.isUserExist === true) {
       error = '用户名已存在';
@@ -75,6 +74,6 @@ export default class Sign extends React.Component {
       <button type="button" className="btn btn-block signbtn " onClick={this.SignUser.bind(this)}
               disabled={this.props.isDisabled}>注册
       </button>
-    </div>
+    </div>;
   }
 }

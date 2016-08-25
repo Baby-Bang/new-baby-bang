@@ -11,22 +11,22 @@ const samePassword = (state)=> {
   return {
     type: 'SET_IS_SAME_PASSWORD',
     isSamePassword: state
-  }
+  };
 };
 
 const disable = (state)=> {
   return {
     type: 'SET_IS_DISABLED',
     isDisabled: state
-  }
+  };
 };
 
 const insertMessage = (message)=> {
   return {
     type: 'SEND_MESSAGE',
     text: message
-  }
-}
+  };
+};
 module.exports = {
   userExist,
   samePassword,

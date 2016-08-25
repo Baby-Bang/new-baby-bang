@@ -53,7 +53,7 @@ class Nav extends Component {
                         </span>
                       </a>
                       <a>
-                        <span onClick={this.changeTab.bind(this, 'growth', '/diaries')}>
+                        <span onClick={this.changeTab.bind(this, 'growth', '/showdiaries')}>
                           查看历史
                         </span>
                       </a>
@@ -96,7 +96,7 @@ class Nav extends Component {
           </div>
         </nav>
       </div>
-    </div>
+    </div>;
   }
 }
 

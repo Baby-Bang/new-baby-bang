@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from 'react';
 import {render} from "react-dom";
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from "react-redux";
@@ -11,15 +11,15 @@ import login from "./middlewares/login";
 import nav from "./middlewares/nav";
 import Login from './containers/Login';
 import LoginRegister from  './containers/Login-register';
+import ShowDiaries from './containers/show-diaries';
+import showDiaries from './middlewares/show-diaries';
 import EditorDiary from './containers/Editor-diary';
 import editorDiary from './middlewares/editor-diary';
 import Sign from './containers/Sign';
-import userExist from './middlewares/sign'
-import message from './middlewares/sign-insertMessage'
+import userExist from './middlewares/sign';
+import message from './middlewares/sign-insertMessage';
 
-
-const createStoreWithMiddleware = applyMiddleware(getValue, login, editorDiary,userExist,message,nav)(createStore);
-
+const createStoreWithMiddleware = applyMiddleware(getValue, login, editorDiary,userExist,message,nav, showDiaries)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -33,6 +33,7 @@ render(
         <IndexRoute component={Login}/>
         <Route path="/sign" component={Sign}/>
       </Route>
+      <Route path="/showdiaries" component={ShowDiaries} />
       <Route path="/diary" component={EditorDiary}/>
     </Router>
   </Provider>, document.getElementById('app'));

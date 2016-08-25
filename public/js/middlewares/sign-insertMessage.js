@@ -14,8 +14,8 @@ export default store => next => action => {
       })
       .end((err, res) => {
         next(actions.userExist(res.body));
-      })
+      });
   } else {
-    next(action)
+    next(action);
   }
-}
+};

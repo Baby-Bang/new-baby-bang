@@ -16,7 +16,7 @@ const changeTab = (text) => {
 const logOut = ()=> {
   return {
     type: 'LOG_OUT',
-  }
+  };
 };
 
 const clear = () => {

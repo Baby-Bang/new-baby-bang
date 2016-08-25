@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 const putDiary = require('../dbs/editor-diary-db');
+const findBabyBir = require('../helpers/find');
 
 router.post('/diary', (req, res) => {
   "use strict";
-  req.session.userInfo = {userName: '123', password: '123', diaries: []};
-  const searchData = {userName: req.session.userInfo.userName};
+  const searchData = {userName: req.session.userName};
   const addData = {$push:{diaries: req.body}};
   putDiary(searchData, addData, (err) => {
     let httpCode = 201;
@@ -19,9 +19,10 @@ router.post('/diary', (req, res) => {
 
 router.get('/babyBir', (req, res) => {
   "use strict";
-  req.session.userInfo = {userName: '111', password: '111', babyBir: '2016-01-02'};
-
-  res.json(req.session.userInfo.babyBir);
+  console.log(req.session.userName);
+  findBabyBir('userInfo', {userName: req.session.userName}, (result) => {
+    res.json(result[0].babyBir);
+  });
 });
 
 
