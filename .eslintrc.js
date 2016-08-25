@@ -3,7 +3,7 @@ module.exports = {
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -17,6 +17,7 @@ module.exports = {
     "react"
   ],
   "rules": {
+    "prefer-arrow-callback": "error",
     "indent": [
       "error",
       2,
@@ -30,7 +31,7 @@ module.exports = {
       "error",
       "unix"
     ],
-    "no-console":0,
+    "no-console": 0,
     "semi": [
       "error",
       "always"
