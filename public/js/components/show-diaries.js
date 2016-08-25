@@ -7,7 +7,7 @@ export default class GrowthPage extends React.Component {
   }
 
   render() {
-    return <div className="diaryGrowth" style={{"backgroundImage": "url(../images/diaries_meitu_2.jpg)"}}>
+    return <div className="diaryGrowth" style={{"backgroundImage": "url(../images/diaries.jpg)"}}>
       <div>
         <Nav />
       </div>
@@ -19,7 +19,7 @@ export default class GrowthPage extends React.Component {
           <div className="leftFixed">
             <DateLists date={this.props.dates}/>
           </div>
-          <div className="col-md-offset-5 col-md-7 diaryList">
+          <div className="col-md-offset-5 col-md-6 diaryList" >
             <DiaryList diarys={this.props.diaries}/>
           </div>
         </div>
