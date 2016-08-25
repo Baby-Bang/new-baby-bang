@@ -9,27 +9,26 @@ export default class EditorDiary extends React.Component {
   addDiary() {
     const title = this.refs.title.value;
     const content = this.refs.content.value;
-    const babyScore = this.refs.babyScore.value;
-    const parentScore = this.refs.parentScore.value;
+    const babyScore = this.props.babyScore + 1;
+    const parentScore = this.props.parentScore + 1;
     const publicDiary = $("input[name=public]:checked").val();
-    console.log({
-      date: this.props.today,
-      babyDays: this.props.age,
-      title,
-      content,
-      babyScore,
-      parentScore,
-      publicDiary
-    });
-    this.props.onAdd({
-      date: this.props.today,
-      babyDays: this.props.age,
-      title,
-      content,
-      babyScore,
-      parentScore,
-      publicDiary
-    });
+    if (!publicDiary || !title || !content) {
+      alert('日记内容不完整，请添加完整');
+    } else {
+      this.props.onAdd({
+        date: this.props.today,
+        babyDays: this.props.age,
+        title,
+        content,
+        babyScore,
+        parentScore,
+        publicDiary
+      });
+    }
+  }
+
+  changeScore(type, score) {
+    this.props.onChangeScore(type, score);
   }
 
   render() {
@@ -54,10 +53,26 @@ export default class EditorDiary extends React.Component {
             </div>
             <div className="diary">
               <div className="score">
-                <span>babyScore:</span><input type="text" ref="babyScore"/>
+                <span className="scoreRight">babyScore:</span>
+                {[0, 0, 0, 0, 0].map((d, i) => {
+                  if (i <= this.props.babyScore) {
+                    return <span className="glyphicon glyphicon-star starColor"
+                                 onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
+                  }
+                  return <span className="glyphicon glyphicon-star-empty starColor"
+                               onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
+                })}
               </div>
               <div className="score">
-                <span>parentScore:</span><input type="text" ref="parentScore"/>
+                <span className="scoreRight">parentScore:</span>
+                {[0, 0, 0, 0, 0].map((d, i) => {
+                  if (i <= this.props.parentScore) {
+                    return <span className="glyphicon glyphicon-star starColor"
+                                 onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
+                  }
+                  return <span className="glyphicon glyphicon-star-empty starColor"
+                               onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
+                })}
               </div>
             </div>
             <div className="diaryPublic">
