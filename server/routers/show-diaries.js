@@ -7,7 +7,11 @@ const find = require('../helpers/find');
 router.get('/diaries', (req, res)=> {
   find('userInfo', {userName: req.session.userName}, (result) => {
     "use strict";
-    res.json(result[0].diaries);
+    if(result.length != 0) {
+      res.json(result[0].diaries);
+    } else {
+      res.json([]);
+    }
   });
 });
 
