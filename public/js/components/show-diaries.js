@@ -159,8 +159,7 @@ class EmptyDiary extends React.Component {
   render() {
     return <div className="row">
       <div className="diaryNo">
-        <h1 >~阿奥</h1>
-        <img src="../images/dingdang.png" alt="tupian" width='120px' height='120px'/>
+        <img src="../images/dingdang.png" alt="tupian" />
         <div className="kong">
           <h1 >~空空如也</h1>
         </div>
