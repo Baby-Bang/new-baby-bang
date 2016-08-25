@@ -38,7 +38,7 @@ describe('Editor',()=> {
       .end(() => {
         testSession.get('/babyBir')
           .expect(200, '"2016-03-01"', done);
-      })
+      });
   });
 
 });
