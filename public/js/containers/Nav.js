@@ -12,9 +12,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onGetUserName: () => {
-      dispatch(action.getUserName(''));
+      dispatch(action.setUserName(''));
     },
-    onchangeTab: (text) => {
+    onChangeTab: (text) => {
       dispatch(action.changeTab(text));
     },
     onLogOut:()=>{

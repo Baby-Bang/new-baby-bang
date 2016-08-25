@@ -1,5 +1,5 @@
 "use strict";
-const getUserName = (userName)=> {
+const setUserName = (userName)=> {
   return {
     type: 'SET_USERNAME',
     userName
@@ -26,7 +26,7 @@ const clear = () => {
 };
 
 module.exports = {
-  getUserName,
+  setUserName,
   changeTab,
   logOut,
   clear

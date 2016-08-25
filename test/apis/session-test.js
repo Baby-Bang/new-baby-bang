@@ -26,4 +26,9 @@ describe('sessions', () => {
           .expect(200, '"suibian"', done);
       });
   });
+
+  it('return user logOut', (done) => {
+    testSession.delete('/sessions')
+      .expect('""', done);
+  });
 });
