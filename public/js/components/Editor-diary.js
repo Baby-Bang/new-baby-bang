@@ -32,7 +32,7 @@ export default class EditorDiary extends React.Component {
   }
 
   render() {
-    return <div>
+    return <div className="editorShow" style={{"backgroundImage": "url(../../images/diaryContentBG.jpg)"}}>
       <div>
         <Nav/>
       </div>
@@ -56,10 +56,10 @@ export default class EditorDiary extends React.Component {
                 <span className="scoreRight">babyScore:</span>
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.babyScore) {
-                    return <span className="glyphicon glyphicon-star starColor"
+                    return <span key={i} className="glyphicon glyphicon-star starColor"
                                  onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
                   }
-                  return <span className="glyphicon glyphicon-star-empty starColor"
+                  return <span key={i} className="glyphicon glyphicon-star-empty starColor"
                                onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
                 })}
               </div>
@@ -67,10 +67,10 @@ export default class EditorDiary extends React.Component {
                 <span className="scoreRight">parentScore:</span>
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.parentScore) {
-                    return <span className="glyphicon glyphicon-star starColor"
+                    return <span key={i} className="glyphicon glyphicon-star starColor"
                                  onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
                   }
-                  return <span className="glyphicon glyphicon-star-empty starColor"
+                  return <span key={i} className="glyphicon glyphicon-star-empty starColor"
                                onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
                 })}
               </div>
@@ -87,7 +87,6 @@ export default class EditorDiary extends React.Component {
           </div>
         </div>
       </div>
-      ;
     </div>
   }
 }
