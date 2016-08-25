@@ -12,18 +12,22 @@ export default class Login extends React.Component {
     }
   }
 
+  componentWillUpdate(nextProps) {
+    if(nextProps.loginState === 200){
+      browserHistory.push('/');
+    }
+  }
+
   render() {
     let error = '';
-    if (this.props.httpCode === 403) {
+    if (this.props.loginState === 403) {
       error = '用户或密码错误！';
-    } else if (this.props.httpCode === 200) {
-      browserHistory.push('/');
     }
     return <div className="col-lg-10 col-lg-offset-1">
       <input type="text" className="text form-control loginInput center" ref="userName" placeholder="用户名"/>
-      <input type="text" className="text form-control loginInput center" ref="password" placeholder="密码"/>
+      <input type="password" className="text form-control loginInput center" ref="password" placeholder="密码"/>
       <div className="errorColor" id="error">{error}</div>
-      <button type="button" className="btn btn-block logbtn" onClick={this.submitUserInfo.bind(this)}>sumbit</button>
+      <button type="button" className="btn btn-block logbtn" onClick={this.submitUserInfo.bind(this)}>登录</button>
     </div>
   }
 }

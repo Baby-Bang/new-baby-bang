@@ -18,7 +18,6 @@ const sign = require('./server/routers/sign');
 const editorDiary = require('./server/routers/editor-diary');
 
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
@@ -28,8 +27,8 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use('/',sessions);
-app.use('/',isUserExist);
+app.use('/', sessions);
+app.use('/', isUserExist);
 app.use('/', login);
 app.use('/', showDiaries);
 app.use('/', sign);
@@ -37,10 +36,10 @@ app.use('/', editorDiary);
 
 app.get('*', (req, res) => {
   "use strict";
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-})
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
 
-var server = app.listen(3000, function () {
+var server = app.listen(3000, () => {
   console.log('listening at port %s', server.address().port);
 });
 

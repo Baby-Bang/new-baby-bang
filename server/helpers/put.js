@@ -1,19 +1,19 @@
 const url = require('./get-url');
 const mongoClient = require('./mongodb');
 
-module.exports = (collect, data, callback) => {
+module.exports = (collect, searchData, addData, callback) => {
   if (callback) {
     mongoClient.connect(url, (err, db)=> {
       const collection = db.collection(collect);
-      collection.insertOne(data, (err, result)=> {
-        callback(err,result);
+      collection.update(searchData, addData, (err)=> {
+        callback(err);
       });
       db.close();
     });
   } else {
     mongoClient.connect(url, (err, db)=> {
       const collection = db.collection(collect);
-      collection.insertOne(data);
+      collection.update(searchData, addData);
       db.close();
     });
   }

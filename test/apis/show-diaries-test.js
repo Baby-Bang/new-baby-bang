@@ -6,9 +6,11 @@ describe('show diaries', () => {
   let server;
   let testssion = null;
 
-  beforeEach(function (done) {
+  beforeEach((done) => {
+    server = require('../../server');
     insert('userInfo', {
-      userName: 'noCare', password: '123456', diaries: [{
+      userName: 'noCare', password: '123456',
+      diaries: [{
         date: "2016-02-10",
         babyDays: "0-0-3",
         title: "宝宝今天笑了",
@@ -31,7 +33,6 @@ describe('show diaries', () => {
       "use strict";
       done();
     });
-    server = require('../../server');
     testssion = request(server);
   });
 

@@ -65,8 +65,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onShow: (diaries) => {
-      dispatch(action.showdiaries(diaries));
+    onShow: () => {
+      dispatch(action.showdiaries(''));
     }
   };
 };

@@ -1,6 +1,7 @@
-const insert = require('../helpers/insert');
+const put = require('../helpers/put');
 
-module.exports = (data, callback) => {
+module.exports = (searchData, addData, callback) => {
   "use strict";
-  insert('userInfo',data, callback);
-}
+  put('userInfo', searchData, addData, callback);
+
+};
