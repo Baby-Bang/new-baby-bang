@@ -24,8 +24,7 @@ export default class GrowthPage extends React.Component {
           </div>
         </div>
       </div>
-    </div>
-
+    </div>;
   }
 }
 
@@ -37,11 +36,10 @@ class DateLists extends React.Component {
         {this.props.date.map((d, index) => {
           return <div key={index}>
             <YearDate date={d} diaries={this.props.diaries}/>
-          </div>
-
+          </div>;
         })}
       </ul>
-    </div>
+    </div>;
   }
 }
 
@@ -50,13 +48,13 @@ class YearDate extends React.Component {
     super(props);
     this.state = {
       isShow: false
-    }
+    };
   }
 
   show() {
     this.setState({
       isShow: !this.state.isShow
-    })
+    });
   }
 
   render() {
@@ -72,7 +70,7 @@ class YearDate extends React.Component {
           })}
         </ul>
       </li>
-    </div>
+    </div>;
   }
 }
 
@@ -81,13 +79,13 @@ class MonthDay extends React.Component {
     super(props);
     this.state = {
       isShow: false
-    }
+    };
   }
 
   show() {
     this.setState({
       isShow: !this.state.isShow
-    })
+    });
   }
 
   render() {
@@ -101,11 +99,11 @@ class MonthDay extends React.Component {
               <li className="list-group-item listLi"><a
                 href={`#${this.props.year}-${this.props.date.month}-${this.props.date.day[i]}`}><h5
                 className="pcolor">{d}日</h5></a></li>
-            </div>
+            </div>;
           })}
         </ul>
       </li>
-    </div>
+    </div>;
   }
 }
 
@@ -128,11 +126,11 @@ class DiaryList extends React.Component {
               if (index < diary.babyScore) {
                 return <div key={index} className="threeInline">
                   <span className="glyphicon glyphicon-star starColor"></span>
-                </div>
+                </div>;
               } else {
                 return <div key={index} className="threeInline">
                   <span className="glyphicon glyphicon-star-empty starColor"></span>
-                </div>
+                </div>;
               }
             })}
             <p className="timeColor threeInline">父母表现：</p>
@@ -140,17 +138,17 @@ class DiaryList extends React.Component {
               if (index < diary.parentScore) {
                 return <div key={index} className="threeInline">
                   <span className="glyphicon glyphicon-star starColor"></span>
-                </div>
+                </div>;
               } else {
                 return <div key={index} className="threeInline">
                   <span className="glyphicon glyphicon-star-empty starColor"></span>
-                </div>
+                </div>;
               }
             })}
           </div>
-        </div>
+        </div>;
       })}
-    </div>
+    </div>;
   }
 }
 
@@ -164,6 +162,6 @@ class EmptyDiary extends React.Component {
           <h1 >~空空如也</h1>
         </div>
       </div>
-    </div>
+    </div>;
   }
 }

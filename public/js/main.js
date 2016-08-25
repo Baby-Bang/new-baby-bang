@@ -12,7 +12,7 @@ import nav from "./middlewares/nav";
 import Login from './containers/Login';
 import LoginRegister from  './containers/Login-register';
 import ShowDiaries from './containers/show-diaries';
-import showDiaries from './middlewares/show-diaries'
+import showDiaries from './middlewares/show-diaries';
 import EditorDiary from './containers/Editor-diary';
 import editorDiary from './middlewares/editor-diary';
 import Sign from './containers/Sign';
