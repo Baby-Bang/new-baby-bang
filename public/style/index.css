@@ -49,3 +49,12 @@
 .errorColor{
   color:red;
 }
+
+.signbtn{
+  background:#ff6382;
+  margin-top: 30px;
+}
+
+#userExist,#samePassword{
+  color:red;
+}
