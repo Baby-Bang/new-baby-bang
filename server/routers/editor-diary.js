@@ -19,8 +19,8 @@ router.post('/diary', (req, res) => {
 
 router.get('/babyBir', (req, res) => {
   "use strict";
+  console.log(req.session.userName);
   findBabyBir('userInfo', {userName: req.session.userName}, (result) => {
-    console.log(result);
     res.json(result[0].babyBir);
   });
 });
