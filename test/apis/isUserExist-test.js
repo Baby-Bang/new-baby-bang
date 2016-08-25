@@ -9,6 +9,7 @@ describe('user exist', ()=> {
     insert('userInfo', {userName: '123', password: '123', babyBir: '2016-05-14', sex: 'male', diaries: []}, done);
     server = require('../../server');
   });
+
   afterEach((done) => {
     clear('userInfo');
     done();
@@ -26,6 +27,5 @@ describe('user exist', ()=> {
       .post('/isUserExist')
       .send({userName: '900'})
       .expect(200, 'false', done);
-
   });
 });

@@ -3,6 +3,7 @@ const findUser = require('../dbs/isUserName-db');
 const express = require('express');
 
 const router = express.Router();
+
 router.post('/isUserExist', (req, res)=> {
   findUser(req.body, (result)=> {
     if (result.length != 0) {

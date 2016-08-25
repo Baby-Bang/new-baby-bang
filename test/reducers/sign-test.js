@@ -3,8 +3,8 @@ const reducer = require('../../public/js/reducers/sign');
 const actions = require('../../public/js/actions/sign');
 const expect = require('chai').expect;
 
-describe('sign reducer', function () {
-  it('changes sign', function () {
+describe('sign reducer', () => {
+  it('changes sign', () => {
     const state = {isUserExist: false, isSamePassword: true, isDisabled: ''};
     expect(reducer(state, actions.userExist(true))).to.be.deep.equal({
       isUserExist: true,

@@ -28,7 +28,13 @@ const getAge = (babyBir) => {
 };
 const mapStateToProps = (state) => {
   const babyBir = state.editorDiary.babyBir;
-  return getAge(babyBir);
+  const {age, today} = getAge(babyBir);
+  return {
+    age,
+    today,
+    babyScore: state.editorDiary.babyScore,
+    parentScore: state.editorDiary.parentScore
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -36,8 +42,11 @@ const mapDispatchToProps = (dispatch) => {
     onGet: () => {
       dispatch(actions.getBirthday(''));
     },
-    onAdd:(data)=>{
+    onAdd: (data)=> {
       dispatch(actions.addDiary(data));
+    },
+    onChangeScore: (type, score) => {
+      dispatch(actions.changeScore(type, score));
     }
   };
 };
