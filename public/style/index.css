@@ -12,7 +12,7 @@
 
 .loginSubmit {
   width: 400px;
-  height: 400px;
+  height:500px;
   background: #fff;
 }
 
@@ -148,14 +148,26 @@
   border: #ffc4a5 1px solid;
 
 }
-.diary{
-  padding-left:0px !important;
-  padding-right:0px !important;
+.diaryNo{
   padding-top:150px;
   height:660px;
-  background: #fee1e3;
+  position: fixed !important;
+  margin-left: 300px;
+
+}
+.diary h1{
+  margin-left: 900px;
 }
 
+.diaryNo img{
+  margin-top: 40px;
+  margin-left: 400px;
+}
+
+.diaryNo .kong{
+  margin-left: 500px;
+  margin-top: 70px;
+}
 .listLi{
   border:none !important;
   background-color: #fee1e3;

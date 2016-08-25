@@ -19,7 +19,7 @@ export default class GrowthPage extends React.Component {
           <div className="leftFixed">
             <DateLists date={this.props.dates}/>
           </div>
-          <div className="col-md-offset-5 col-md-6 diaryList" >
+          <div className="col-md-offset-5 col-md-6 diaryList">
             <DiaryList diarys={this.props.diaries}/>
           </div>
         </div>
@@ -158,12 +158,12 @@ class EmptyDiary extends React.Component {
 
   render() {
     return <div className="row">
-      <div className="diary">
-        <h1 className="col-md-10 col-md-offset-2">~阿奥</h1>
-        <div className="center">
-          <img src="../images/dingdang.png" alt="tupian" width='120px' height='120px'/>
+      <div className="diaryNo">
+        <h1 >~阿奥</h1>
+        <img src="../images/dingdang.png" alt="tupian" width='120px' height='120px'/>
+        <div className="kong">
+          <h1 >~空空如也</h1>
         </div>
-        <h1 className="col-md-4 col-md-offset-8">~空空如也</h1>
       </div>
     </div>
   }
