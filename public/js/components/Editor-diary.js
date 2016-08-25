@@ -33,7 +33,7 @@ export default class EditorDiary extends React.Component {
 
   render() {
     return <div>
-      <div className="diaryNav">
+      <div>
         <Nav/>
       </div>
       <div className="container">
@@ -49,7 +49,7 @@ export default class EditorDiary extends React.Component {
             </div>
             <div className="diary">
               <p>内容：</p>
-              <input className="diaryContext" type="text" ref="content"/>
+              <textarea className="diaryContext" ref="content" cols="30" rows="10"></textarea>
             </div>
             <div className="diary">
               <div className="score">
@@ -57,10 +57,10 @@ export default class EditorDiary extends React.Component {
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.babyScore) {
                     return <span className="glyphicon glyphicon-star starColor"
-                                 onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>;
+                                 onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
                   }
                   return <span className="glyphicon glyphicon-star-empty starColor"
-                               onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>;
+                               onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
                 })}
               </div>
               <div className="score">
@@ -68,10 +68,10 @@ export default class EditorDiary extends React.Component {
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.parentScore) {
                     return <span className="glyphicon glyphicon-star starColor"
-                                 onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>;
+                                 onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
                   }
                   return <span className="glyphicon glyphicon-star-empty starColor"
-                               onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>;
+                               onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
                 })}
               </div>
             </div>
@@ -87,6 +87,7 @@ export default class EditorDiary extends React.Component {
           </div>
         </div>
       </div>
-    </div>;
+      ;
+    </div>
   }
 }

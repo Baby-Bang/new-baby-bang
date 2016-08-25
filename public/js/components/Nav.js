@@ -11,20 +11,20 @@ class Nav extends Component {
     this.props.onGetUserName();
   }
 
-  changeTab(text,url) {
-    if(this.props.userName === ''){
+  changeTab(text, url) {
+    if (this.props.userName === '') {
       alert('您未登录, 是否登录');
       browserHistory.push('/login');
     }
     else {
-      this.props.onchangeTab(text);
+      this.props.onChangeTab(text);
       browserHistory.push(url);
     }
   }
 
-  logOut(text){
+  logOut(text) {
     this.props.onLogOut();
-    this.props.onchangeTab(text);
+    this.props.onChangeTab(text);
     this.props.changeLoginState();
   }
 
@@ -48,12 +48,12 @@ class Nav extends Component {
                     </button>
                     <div className="dropdown-content">
                       <a>
-                        <span onClick={this.changeTab.bind(this, 'growth','/diary')}>
+                        <span onClick={this.changeTab.bind(this, 'growth', '/diary')}>
                           添加日记
                         </span>
                       </a>
                       <a>
-                        <span onClick={this.changeTab.bind(this, 'growth','/diaries')}>
+                        <span onClick={this.changeTab.bind(this, 'growth', '/diaries')}>
                           查看历史
                         </span>
                       </a>
@@ -66,8 +66,8 @@ class Nav extends Component {
                       小圈子
                     </button>
                     <div className="dropdown-content">
-                      <a><span onClick={this.changeTab.bind(this, 'circle','/daddyCenter')}>爸爸圈</span></a>
-                      <a><span onClick={this.changeTab.bind(this, 'circle','/momCenter')}>妈妈圈</span></a>
+                      <a><span onClick={this.changeTab.bind(this, 'circle', '/daddyCenter')}>爸爸圈</span></a>
+                      <a><span onClick={this.changeTab.bind(this, 'circle', '/momCenter')}>妈妈圈</span></a>
                     </div>
                   </div>
                 </li>
@@ -87,7 +87,7 @@ class Nav extends Component {
                     </div>
                     <div className={this.props.userName === '' ? 'hidden' : ''}>
                       <Link to="/personCenter">{this.props.userName}</Link> |
-                      <Link to="/" onClick={this.logOut.bind(this,'home')}>登出</Link>
+                      <Link to="/" onClick={this.logOut.bind(this, 'home')}>登出</Link>
                     </div>
                   </div>
                 </div>

@@ -5,14 +5,14 @@ export default store => next => action => {
   if (action.type === 'SET_USERNAME') {
     request.get('/sessions/user')
       .end((err, res) => {
-        next(actions.getUserName(res.body));
+        next(actions.setUserName(res.body));
       });
   }
-  else if(action.type === 'LOG_OUT'){
+  else if (action.type === 'LOG_OUT') {
     request.del('/sessions')
-      .end((err,res)=>{
-        next(actions.getUserName(res.body));
-      });
+      .end((err, res)=> {
+        next(actions.setUserName(res.body));
+      })
   }
   else
     next(action);
