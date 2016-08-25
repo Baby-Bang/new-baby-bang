@@ -39,21 +39,21 @@ export default class EditorDiary extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2 diaryContent">
-            <span className="editor">编辑日记</span>
+            <span className="textShow editor">编辑日记</span>
             <div className="diaryDate">
-              <span className="today">日期：{this.props.today}</span>
-              <span className="babyDay">宝宝今天{this.props.age}了</span>
+              <span className="textShow today">日期：{this.props.today}</span>
+              <span className="textShow babyDay">宝宝今天{this.props.age}了</span>
             </div>
             <div className="diary">
-              <span>标题：</span><input className="diaryTitle" type="text" ref="title"/>
+              <span className="textShow">标题：</span><input className="diaryTitle" type="text" ref="title"/>
             </div>
             <div className="diary">
-              <p>内容：</p>
-              <textarea className="diaryContext" ref="content" cols="30" rows="10"></textarea>
+              <p className="textShow">内容：</p>
+              <textarea className="diaryContext" ref="content" cols="30" rows="10"/>
             </div>
             <div className="diary">
               <div className="score">
-                <span className="scoreRight">babyScore:</span>
+                <span className="scoreRight textShow">宝宝表现:</span>
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.babyScore) {
                     return <span key={i} className="glyphicon glyphicon-star starColor"
@@ -64,7 +64,7 @@ export default class EditorDiary extends React.Component {
                 })}
               </div>
               <div className="score">
-                <span className="scoreRight">parentScore:</span>
+                <span className="scoreRight textShow">父母表现:</span>
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.parentScore) {
                     return <span key={i} className="glyphicon glyphicon-star starColor"
@@ -77,12 +77,12 @@ export default class EditorDiary extends React.Component {
             </div>
             <div className="diaryPublic">
               <div className="public">
-                <input type="radio" name="public" value="false"/>私有
+                <input  type="radio" name="public" value="false"/><span className="textShow">私有</span>
               </div>
               <div className="public">
-                <input type="radio" name="public" value="true"/>公开
+                <input type="radio" name="public" value="true"/><span className="textShow">公开</span>
               </div>
-              <button className="submit btn btn-primary" onClick={this.addDiary.bind(this)}>保存</button>
+              <button className="submit btn btn-primary textShow" onClick={this.addDiary.bind(this)}>保存</button>
             </div>
           </div>
         </div>
