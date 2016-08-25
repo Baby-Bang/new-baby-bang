@@ -9,7 +9,7 @@ module.exports = (state = {userName: '', isActive: 'home'}, action) => {
       return {
         userName: state.userName,
         isActive: action.text
-      }
+      };
     default:
       return state;
   }

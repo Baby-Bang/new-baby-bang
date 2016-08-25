@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import {browserHistory} from 'react-router';
 
 class Nav extends Component {
   more() {
@@ -10,10 +11,22 @@ class Nav extends Component {
     this.props.onGetUserName();
   }
 
-  changeActive(text) {
-    this.props.onChangeActive(text);
+  changeActive(text,url) {
+    if(this.props.userName === ''){
+      alert('您未登录, 是否登录');
+      browserHistory.push('/login');
+    }
+    else {
+      this.props.onChangeActive(text);
+      browserHistory.push(url);
+    }
   }
 
+  logOut(text){
+    this.props.onLogOut();
+    this.props.onChangeActive(text);
+    this.props.changeLoginState();
+  }
   render() {
     return <div>
       <div className="navTop">
@@ -29,19 +42,28 @@ class Nav extends Component {
                 </li>
                 <li>
                   <div className="dropdown">
-                    <button className={this.props.isActive === 'growth' ? "dropbtn navLi active" : "dropbtn navLi"}>成长日记</button>
+                    <button className={this.props.isActive === 'growth' ? "dropbtn navLi active" : "dropbtn navLi"}>
+                      成长日记
+                    </button>
                     <div className="dropdown-content">
-                      <Link to="/diaries"><span onClick={this.changeActive.bind(this, 'growth')}>查看日记</span></Link>
-                      <Link to="/diary"><span onClick={this.changeActive.bind(this, 'growth')}>添加日记</span></Link>
+                      <a><span onClick={this.changeActive.bind(this, 'growth','/diaries')}>查看历史</span></a>
+                      <a>
+                        <span onClick={this.changeActive.bind(this, 'growth','/diary')}>
+                          添加日记
+                        </span>
+                      </a>
+
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="dropdown">
-                    <button className={this.props.isActive === 'circle' ? "dropbtn navLi active" : "dropbtn navLi"}>小圈子</button>
+                    <button className={this.props.isActive === 'circle' ? "dropbtn navLi active" : "dropbtn navLi"}>
+                      小圈子
+                    </button>
                     <div className="dropdown-content">
-                      <Link to="/dadyCenter"><span onClick={this.changeActive.bind(this, 'circle')}>爸爸圈</span></Link>
-                      <Link to="/momCenter"><span onClick={this.changeActive.bind(this, 'circle')}>妈妈圈</span></Link>
+                      <a><span onClick={this.changeActive.bind(this, 'circle','/dadyCenter')}>爸爸圈</span></a>
+                      <a><span onClick={this.changeActive.bind(this, 'circle','/momCenter')}>妈妈圈</span></a>
                     </div>
                   </div>
                 </li>
@@ -54,29 +76,23 @@ class Nav extends Component {
                 </li>
 
                 <div id="log">
-                  <NavLogReg userName={this.props.userName}/>
+                  <div id="login_res">
+                    <div className={this.props.userName === '' ? '' : 'hidden'}>
+                      <Link to="/login">登录</Link> |
+                      <Link to="/sign"> 注册</Link>
+                    </div>
+                    <div className={this.props.userName === '' ? 'hidden' : ''}>
+                      <Link to="#">{this.props.userName}</Link> |
+                      <Link to="/" onClick={this.logOut.bind(this,'home')}>登出</Link>
+                    </div>
+                  </div>
                 </div>
               </ul>
             </div>
           </div>
         </nav>
       </div>
-      <div className="scoll">test</div>
-    </div>
-  }
-}
-
-class NavLogReg extends Component {
-  render() {
-    return <div id="login_res">
-      <div className={this.props.userName === '' ? '' : 'hidden'}>
-        <Link to="/login">登录</Link> |
-        <Link to="/sign"> 注册</Link>
-      </div>
-      <div className={this.props.userName === '' ? 'hidden' : ''}>
-        <Link to="#">{this.props.userName}</Link> |
-        <Link to="#">登出</Link>
-      </div>
+      {/*<div className="scoll"></div>*/}
     </div>
   }
 }
