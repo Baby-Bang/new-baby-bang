@@ -2,6 +2,7 @@ import request from 'superagent';
 import actions from '../actions/login';
 
 export default store => next => action => {
+
   if (action.type === 'LOGIN') {
     request.post('/sessions')
       .send(action.httpCode)

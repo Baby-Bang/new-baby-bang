@@ -3,7 +3,7 @@ const showdiaries = (diaries)=> {
 
   return {
     type: 'SET_DIARIES',
-    diaries:diaries
+    diaries: diaries
   };
 };
 
