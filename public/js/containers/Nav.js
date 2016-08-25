@@ -5,7 +5,7 @@ import action from '../actions/nav';
 const mapStateToProps = (state) => {
   return {
     userName:state.nav.userName,
-    isActive: state.nav.isActive
+    currentTab: state.nav.currentTab
   };
 };
 
@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => {
     onGetUserName: () => {
       dispatch(action.getUserName(''));
     },
-    onChangeActive: (text) => {
-      dispatch(action.changeActive(text));
+    onchangeTab: (text) => {
+      dispatch(action.changeTab(text));
     },
     onLogOut:()=>{
       dispatch(action.logOut());

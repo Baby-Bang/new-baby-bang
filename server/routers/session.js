@@ -3,16 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/sessions/user',(req,res)=>{
-  if(req.session.userName) {
-    res.json(req.session.userName);
-  } else {
-    req.session.userName = '';
-    res.json(req.session.userName);
-  }
+  res.json(req.session.userName || '');
 });
 
-router.post('/sessions/user',(req,res)=>{
-  req.session.userName = req.body.userName;
+router.delete('/sessions',(req,res)=>{
+  req.session.userName = '';
   res.json(req.session.userName);
 });
 
