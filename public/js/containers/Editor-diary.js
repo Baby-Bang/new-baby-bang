@@ -29,6 +29,7 @@ const getAge = (babyBir) => {
 const mapStateToProps = (state) => {
   const babyBir = state.editorDiary.babyBir;
   const {age, today} = getAge(babyBir);
+  console.log(age, today);
   return {
     age,
     today,

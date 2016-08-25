@@ -23,7 +23,7 @@ export default class Login extends React.Component {
     if (this.props.loginState === 403) {
       error = '用户或密码错误！';
     }
-    return <div className="col-lg-10 col-lg-offset-1">
+    return <div className="col-lg-10 col-lg-offset-1" id="loginTop">
       <input type="text" className="text form-control loginInput center" ref="userName" placeholder="用户名"/>
       <input type="password" className="text form-control loginInput center" ref="password" placeholder="密码"/>
       <div className="errorColor" id="error">{error}</div>
