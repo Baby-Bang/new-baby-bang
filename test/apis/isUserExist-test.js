@@ -27,6 +27,5 @@ describe('user exist', ()=> {
       .get('/isUserExist')
       .send({userName: '900'})
       .expect(200, 'false', done);
-
   });
 });

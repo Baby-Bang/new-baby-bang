@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/isUserExist', (req, res)=> {
+router.post('/isUserExist', (req, res)=> {
   findUser(req.body, (result)=> {
     if (result.length != 0) {
       req.session.name = result[0].userName;
