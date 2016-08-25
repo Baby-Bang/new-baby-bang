@@ -17,14 +17,14 @@ describe('user exist', ()=> {
 
   it('return true when user name is Exist', (done) => {
     request(server)
-      .get('/isUserExist')
+      .post('/isUserExist')
       .send({userName: '123'})
       .expect(200, 'true').end(done);
   });
 
   it('return when user name is not Exist', (done)=> {
     request(server)
-      .get('/isUserExist')
+      .post('/isUserExist')
       .send({userName: '900'})
       .expect(200, 'false', done);
   });
