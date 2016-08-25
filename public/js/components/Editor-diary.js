@@ -33,7 +33,7 @@ export default class EditorDiary extends React.Component {
 
   render() {
     return <div className="editorShow" style={{"backgroundImage":"url(../../images/diaryContentBG.jpg)"}}>
-      <div>
+      <div className="editorTop">
         <Nav/>
       </div>
       <div className="row">
