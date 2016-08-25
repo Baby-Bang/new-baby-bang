@@ -12,7 +12,7 @@ export default store => next => action => {
     request.del('/sessions')
       .end((err,res)=>{
         next(actions.getUserName(res.body));
-      })
+      });
   }
   else
     next(action);

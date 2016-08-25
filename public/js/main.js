@@ -1,4 +1,3 @@
-import React, {Component} from "react";
 import {render} from "react-dom";
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from "react-redux";
@@ -14,11 +13,10 @@ import LoginRegister from  './containers/Login-register';
 import EditorDiary from './containers/Editor-diary';
 import editorDiary from './middlewares/editor-diary';
 import Sign from './containers/Sign';
-import userExist from './middlewares/sign'
-import message from './middlewares/sign-insertMessage'
+import userExist from './middlewares/sign';
+import message from './middlewares/sign-insertMessage';
 
-
-const createStoreWithMiddleware = applyMiddleware(getValue, login, editorDiary,userExist,message,nav)(createStore);
+const createStoreWithMiddleware = applyMiddleware(getValue, login, editorDiary, userExist, message, nav)(createStore);
 
 
 const store = createStoreWithMiddleware(reducer);

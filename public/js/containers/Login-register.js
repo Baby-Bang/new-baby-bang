@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import React, {Component} from "react";
+import React from "react";
 import {Link} from 'react-router';
 
 class LoginRegister extends React.Component {
@@ -25,7 +25,7 @@ class LoginRegister extends React.Component {
           </div>
         </div>
       </div>
-    </div>
+    </div>;
   }
 }
 

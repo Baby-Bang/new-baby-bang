@@ -15,10 +15,10 @@ const getAge = (babyBir) => {
   );
   let age = `${diff.getDate()}天`;
   if (diff.getMonth() != 0) {
-    age = `${diff.getMonth()}月${age}`
+    age = `${diff.getMonth()}月${age}`;
   }
   if (diff.getYear() != 0) {
-    age = `${diff.getYear()}年${age}`
+    age = `${diff.getYear()}年${age}`;
   }
 
   return {

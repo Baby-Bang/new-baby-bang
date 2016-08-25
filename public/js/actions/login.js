@@ -11,7 +11,7 @@ const sendData = (data)=> {
   return {
     type: 'SEND_DATA',
     data
-  }
+  };
 };
 
 module.exports = {

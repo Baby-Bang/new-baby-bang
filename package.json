@@ -9,7 +9,7 @@
     "webpack": "webpack -d --watch",
     "wpw": "webpack -w",
     "coverage": "istanbul cover mocha",
-    "eslint": "eslint server.js server/** client/** test/**",
+    "eslint": "eslint .",
     "refreshMongo": "babel-node ./server/tools/refreshMongo.js"
   },
   "dependencies": {

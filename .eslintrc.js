@@ -4,7 +4,8 @@ module.exports = {
     "commonjs": true,
     "es6": true,
     "mocha": true,
-    "node": true
+    "node": true,
+    "jquery" : true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -13,6 +14,13 @@ module.exports = {
       "jsx": true
     },
     "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "createClass": "createClass", // Regex for Component Factory to use, default to "createClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "15.0" // React version, default to the latest React stable release
+    }
   },
   "plugins": [
     "react"
@@ -32,7 +40,7 @@ module.exports = {
       "error",
       "unix"
     ],
-    "no-console": 0,
+    "no-console": 2,
     "semi": [
       "error",
       "always"
@@ -42,12 +50,15 @@ module.exports = {
       15
     ],
     "react/jsx-uses-vars": [2],
+    "react/jsx-uses-react": "error",
     "max-lines": [
       "error",
       {
         "max": 150,
         "skipComments": true
       }
-    ]
+    ],
+    "complexity": ["error", {"max" : 6}],
+    "no-unused-vars": ["error", { "args": "none" }]
   }
 };

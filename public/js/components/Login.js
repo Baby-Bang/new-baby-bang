@@ -28,6 +28,6 @@ export default class Login extends React.Component {
       <input type="password" className="text form-control loginInput center" ref="password" placeholder="密码"/>
       <div className="errorColor" id="error">{error}</div>
       <button type="button" className="btn btn-block logbtn" onClick={this.submitUserInfo.bind(this)}>登录</button>
-    </div>
+    </div>;
   }
 }
