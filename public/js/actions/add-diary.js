@@ -5,9 +5,9 @@ const afterAddDiary = (httpCode)=> {
   }
 };
 
-const addDiary=(data)=>{
-  return{
-    type:'ADD_DIARY',
+const addDiary = (data)=> {
+  return {
+    type: 'ADD_DIARY',
     data
   }
 };
@@ -19,8 +19,16 @@ const getBirthday = (babyBir) => {
   }
 };
 
+const changeScore = (type, score) => {
+  return {
+    type,
+    score
+  }
+};
+
 module.exports = {
   addDiary,
   afterAddDiary,
-  getBirthday
+  getBirthday,
+  changeScore
 };

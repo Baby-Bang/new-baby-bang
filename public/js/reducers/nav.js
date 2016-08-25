@@ -1,15 +1,9 @@
-module.exports = (state = {userName: '', isActive: 'home'}, action) => {
+module.exports = (state = {userName: '', currentTab: 'home'}, action) => {
   switch (action.type) {
-    case "GETUSERNAME":
-      return {
-        userName: action.userName,
-        isActive: state.isActive
-      };
-    case 'CHANGE_ACTIVE':
-      return {
-        userName: state.userName,
-        isActive: action.text
-      };
+    case "SET_USERNAME":
+      return Object.assign({}, state, {userName: action.userName});
+    case 'CHANGE_TAB':
+      return Object.assign({},state,{currentTab:action.text});
     default:
       return state;
   }

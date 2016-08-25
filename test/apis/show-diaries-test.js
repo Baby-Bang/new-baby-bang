@@ -3,11 +3,11 @@ const request = require('supertest');
 describe('show diaries', () => {
   let server;
 
-  beforeEach(function () {
+  beforeEach(() => {
     server = require('../../server');
   });
 
-  it('responds to /diaries', function (done) {
+  it('responds to /diaries', (done) => {
     request(server)
       .get('/diaries')
       .expect(200, [{

@@ -1,14 +1,14 @@
 "use strict";
 const getUserName = (userName)=> {
   return {
-    type: 'GETUSERNAME',
+    type: 'SET_USERNAME',
     userName
   };
 };
 
-const changeActive = (text) => {
+const changeTab = (text) => {
   return {
-    type: 'CHANGE_ACTIVE',
+    type: 'CHANGE_TAB',
     text
   };
 };
@@ -27,7 +27,7 @@ const clear = () => {
 
 module.exports = {
   getUserName,
-  changeActive,
+  changeTab,
   logOut,
   clear
 };

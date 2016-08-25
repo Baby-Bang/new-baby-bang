@@ -4,113 +4,151 @@
   margin-left: auto;
   margin-right: auto;
 }
-.loginTop{
-  height:60px;
-  margin-bottom:10px;
+
+.loginTop {
+  height: 60px;
+  margin-bottom: 10px;
 }
-.loginSubmit{
-  width:400px;
-  height:400px;
-  background:#fff;
+
+.loginSubmit {
+  width: 400px;
+  height: 400px;
+  background: #fff;
 }
-#Loglist{
-  width:370px;
-  height:50px;
-  border-bottom:3px solid #ff6382;
+
+#Loglist {
+  width: 370px;
+  height: 50px;
+  border-bottom: 3px solid #ff6382;
 }
-.logA{
+
+.logA {
   display: block;
   float: left;
-  width:60px;
-  height:50px;
-  margin-top:10px;
+  width: 60px;
+  height: 50px;
+  margin-top: 10px;
   text-align: center;
-  line-height:60px;
-  font-size:18px;
+  line-height: 60px;
+  font-size: 18px;
   text-align: center;
-  margin-left:80px;
-  text-decoration:none;
-}
-.diaryTitle{
-  width:75%;
-  height:30px;
-}
-.public{
-  display:inline-block;
-  padding:20px;
-}
-.diaryPublic{
-  margin:-25px 0px 0px 180px;
-}
-.diary{
-  margin:15px 0px 30px 92px;
-}
-.submit{
-  margin-left:180px;
-}
-.diaryContext{
-  width:75%;
-  height:200px;
-  margin-left:40px;
-  border:1px solid rgba(0,0,0,0.3);
-}
-.score{
-  display:inline-block;
-  margin-left:30px;
-}
-.editor{
-  display:inline-block;
-  width:100%;
-  height:40px;
-  font-size:20px;
-  text-align:center;
-  line-height:25px;
-  margin:20px 300px 0px 0px;
-  border-bottom:3px solid #ff6382;
-}
-.today{
-  padding:30px 0px 0px 90px;
-}
-.babyDay{
-  padding:30px 0px 0px 280px;
-}
-.loginInput{
-  width:80%;
-  margin-top:30px;
-}
-.editorBackground{
- padding:0px !important;
-}
-.container{
-  width:750px;
-}
-.diaryDate{
-  width:100%;
-  height:40px;
-  font-family:Arial;
-  margin-top:15px;
-  font-size:16px;
-}
-.diaryContent{
-  border:2px solid #000000;
-  height:550px;
-  background: rgba(0,0,0,0.1);
-}
-.loginBody{
-  padding-top:100px;
-  background-color:#fee1e3;
-  padding-bottom:120px;
+  margin-left: 80px;
+  text-decoration: none;
 }
 
-.logbtn{
-  height:40px;
-  background:#ff6382;
-  margin-top:60px;
+.diaryTitle {
+  width: 75%;
+  height: 30px;
 }
-.errorColor{
-  color:red;
-}
-.diaryNav{
-  margin-bottom:-50px;
 
+.public {
+  display: inline-block;
+  padding: 20px;
+}
+
+.diaryPublic {
+  margin: -25px 0px 0px 180px;
+}
+
+.diary {
+  margin: 15px 0px 30px 92px;
+}
+
+.submit {
+  margin-left: 180px;
+}
+
+.diaryContext {
+  width: 75%;
+  height: 200px;
+  margin-left: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.score {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.editor {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 25px;
+  margin: 20px 300px 0px 0px;
+  border-bottom: 3px solid #ff6382;
+}
+
+.today {
+  padding: 30px 0px 0px 90px;
+}
+
+.babyDay {
+  padding: 30px 0px 0px 280px;
+}
+
+.loginInput {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.editorBackground {
+  padding: 0px !important;
+}
+
+.container {
+  width: 750px;
+}
+
+.diaryDate {
+  width: 100%;
+  height: 40px;
+  font-family: Arial;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.diaryContent {
+  border: 2px solid #000000;
+  height: 550px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.loginBody {
+  padding-top: 100px;
+  background-color: #fee1e3;
+  padding-bottom: 120px;
+}
+
+.logbtn {
+  height: 40px;
+  background: #ff6382;
+  margin-top: 60px;
+}
+
+.errorColor {
+  color: red;
+}
+
+.signbtn {
+  background: #ff6382;
+  margin-top: 30px;
+}
+
+#userExist, #samePassword {
+  color: red;
+}
+
+.diaryNav {
+  margin-bottom: -50px;
+}
+
+.starColor {
+  color: #ffff00;
+}
+
+.scoreRight {
+  padding-right: 20px;
 }
