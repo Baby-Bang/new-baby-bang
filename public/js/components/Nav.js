@@ -13,7 +13,7 @@ class Nav extends Component {
 
   changeActive(text,url) {
     if(this.props.userName === ''){
-      alert('请先登录');
+      alert('您未登录, 是否登录');
       browserHistory.push('/login');
     }
     else {
@@ -46,7 +46,7 @@ class Nav extends Component {
                       成长日记
                     </button>
                     <div className="dropdown-content">
-                      <a><span onClick={this.changeActive.bind(this, 'growth','/diaries')}>查看日记</span></a>
+                      <a><span onClick={this.changeActive.bind(this, 'growth','/diaries')}>查看历史</span></a>
                       <a>
                         <span onClick={this.changeActive.bind(this, 'growth','/diary')}>
                           添加日记
