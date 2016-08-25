@@ -1,4 +1,5 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 export default class Sign extends React.Component {
 
@@ -13,14 +14,14 @@ export default class Sign extends React.Component {
     } else {
       this.props.insertMessage({userName, password, babyBir, sex})
       alert('注册成功!');
-
+      browserHistory.push('/login');
     }
   }
 
   samePassword() {
     const password = this.refs.password.value;
     const confirmpwd = this.refs.confirmPwd.value;
-    if (password != confirmpwd && confirmpwd != '') {+
+    if (password != confirmpwd && confirmpwd != '') {
       this.props.samePassword(false);
       this.props.disabled('disabled');
       document.getElementById('samePassword').innerHTML = '两次密码不一致';
@@ -57,7 +58,8 @@ export default class Sign extends React.Component {
       <br/><input type="text" className="text form-control center" ref="userName" placeholder="用户名"
                   onChange={this.isUserExist.bind(this)}/><br/>
       <div className="col-md-offset-0" id="userExist">{error}</div>
-      <input type="password" className="text form-control center" ref="password" placeholder="密码" onBlur={this.samePassword.bind(this)}/><br/>
+      <input type="password" className="text form-control center" ref="password" placeholder="密码"
+             onBlur={this.samePassword.bind(this)}/><br/>
       <input type="password" className="text form-control center" ref="confirmPwd" placeholder="确认密码"
              onBlur={this.samePassword.bind(this)}/><br/>
       <div className="col-md-offset-0" id="samePassword"></div>

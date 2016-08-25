@@ -1,17 +1,12 @@
 import request from 'superagent';
 import actions from '../actions/login';
-import {browserHistory} from 'react-router';
 
 export default store => next => action => {
-  if (action.type === 'LOGIN') {
+  if (action.type === 'SEND_DATA') {
     request.post('/sessions')
-      .send(action.httpCode)
+      .send(action.data)
       .end((err, res) => {
-        if (res.statusCode === 200) {
-          browserHistory.push('/');
-        } else {
-          next(actions.login(res.statusCode));
-        }
+        next(actions.login(res.statusCode));
       });
   }
   else

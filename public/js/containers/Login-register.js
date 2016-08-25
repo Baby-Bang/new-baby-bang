@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import React, {Component} from "react";
+import {Link} from 'react-router';
 
 class LoginRegister extends React.Component {
   render() {
@@ -14,14 +15,14 @@ class LoginRegister extends React.Component {
         </div>
         <div className="col-lg-6 col-md-6">
           <div className="loginSubmit">
-          <div id="Loglist" className="center">
-            <span className="logA" id="login">登录</span>
-            <span className="logA" id="sign">注册</span>
-          </div>
-          <div>
-            {this.props.children}
-          </div>
+            <div id="Loglist" className="center">
+              <Link to="/login"><span className="logA" id="login">登录</span></Link>
+              <Link to="/sign"><span className="logA" id="sign">注册</span></Link>
             </div>
+            <div>
+              {this.props.children}
+            </div>
+          </div>
         </div>
       </div>
     </div>

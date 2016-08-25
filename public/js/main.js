@@ -8,6 +8,7 @@ import Home from "./containers/Home";
 import reducer from "./reducers/index";
 import getValue from "./middlewares/get-value";
 import login from "./middlewares/login";
+import nav from "./middlewares/nav";
 import Login from './containers/Login';
 import LoginRegister from  './containers/Login-register';
 import EditorDiary from './containers/Editor-diary';
@@ -16,7 +17,9 @@ import Sign from './containers/Sign';
 import userExist from './middlewares/sign'
 import message from './middlewares/sign-insertMessage'
 
-const createStoreWithMiddleware = applyMiddleware(getValue, login, editorDiary,userExist,message)(createStore);
+
+const createStoreWithMiddleware = applyMiddleware(getValue, login, editorDiary,userExist,message,nav)(createStore);
+
 
 const store = createStoreWithMiddleware(reducer);
 

@@ -4,14 +4,14 @@ import action from '../actions/login';
 
 const mapStateToProps = (state) => {
   return {
-    httpCode: state.login.httpCode
+    loginState: state.login.loginState
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (data) => {
-      dispatch(action.login(data));
+      dispatch(action.sendData(data));
     }
   };
 };

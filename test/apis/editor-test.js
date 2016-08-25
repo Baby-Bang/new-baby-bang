@@ -37,6 +37,6 @@ describe('Editor',()=> {
     request(server)
       .get('/babyBir')
       .expect(200,'"2016-01-02"',done);
-  })
+  });
 
 });
