@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import ShowDiaries from  '../components/show-diaries'
+import ShowDiaries from  '../components/show-diaries';
 import action from '../actions/show-diaries';
 
 const getDates = (diaries) => {
@@ -48,7 +48,7 @@ const getDates = (diaries) => {
       for (let i of mySetDay) {
         dealDay.push(i);
       }
-      return {month: m, day: dealDay}
+      return {month: m, day: dealDay};
     });
 
     return {year: y, monthDay: monthDay};

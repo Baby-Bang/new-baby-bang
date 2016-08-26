@@ -32,8 +32,8 @@ export default class EditorDiary extends React.Component {
   }
 
   render() {
-    return <div className="editorShow" style={{"backgroundImage": "url(../../images/diaryContentBG.jpg)"}}>
-      <div>
+    return <div className="editorShow" style={{"backgroundImage":"url(../../images/diaryContentBG.jpg)"}}>
+      <div className="editorTop">
         <Nav/>
       </div>
       <div className="container">
@@ -57,10 +57,10 @@ export default class EditorDiary extends React.Component {
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.babyScore) {
                     return <span key={i} className="glyphicon glyphicon-star starColor"
-                                 onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
+                                 onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>;
                   }
                   return <span key={i} className="glyphicon glyphicon-star-empty starColor"
-                               onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>
+                               onClick={this.changeScore.bind(this, 'CHANGE_BABYSCORE', i)}/>;
                 })}
               </div>
               <div className="score">
@@ -68,10 +68,10 @@ export default class EditorDiary extends React.Component {
                 {[0, 0, 0, 0, 0].map((d, i) => {
                   if (i <= this.props.parentScore) {
                     return <span key={i} className="glyphicon glyphicon-star starColor"
-                                 onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
+                                 onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>;
                   }
                   return <span key={i} className="glyphicon glyphicon-star-empty starColor"
-                               onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>
+                               onClick={this.changeScore.bind(this, 'CHANGE_PARENTSCORE', i)}/>;
                 })}
               </div>
             </div>
@@ -87,6 +87,6 @@ export default class EditorDiary extends React.Component {
           </div>
         </div>
       </div>
-    </div>
+    </div>;
   }
 }
