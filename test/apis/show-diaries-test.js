@@ -29,7 +29,7 @@ describe('show diaries', () => {
         public: true,
         likeNumber: 45
       }]
-    }, () => {
+    }, (err) => {
       "use strict";
       done();
     });

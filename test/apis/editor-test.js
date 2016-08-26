@@ -8,7 +8,9 @@ describe('Editor',()=> {
 
   let testSession = null;
   beforeEach((done)=> {
-    insert('userInfo', {userName: '123', password: '123',babyBir: '2016-03-01', diaries: []},done);
+    insert('userInfo', {userName: '123', password: '123',babyBir: '2016-03-01', diaries: []},(err) => {
+      done();
+    });
 
     testSession = request(server);
   });

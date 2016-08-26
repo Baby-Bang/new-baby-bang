@@ -7,7 +7,7 @@ describe('sessions', () => {
   let testSession = null;
 
   beforeEach((done)=> {
-    insert('userInfo', {userName: 'suibian', password: '123456'}, () => {
+    insert('userInfo', {userName: 'suibian', password: '123456'}, (err) => {
       done();
     });
     testSession = request(server);
